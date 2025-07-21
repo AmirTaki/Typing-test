@@ -10,15 +10,18 @@ let mistakes = 0;
 
 
 const renderNewQuote = async() => {
-    const respnse  = await fetch (quoteApiUrl);
+    // const respnse  = await fetch (quoteApiUrl);
 
-    let data = await respnse.json()
+    const respnse = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, nam. Voluptatibus vero fuga illum culpa ex voluptatem, quas incidunt quod vel laudantium iure minus soluta voluptas tempore dolorum ipsa officiis."
+    // let data = await respnse.json()
 
-    quote =  data.content
+    // quote =  data.content
     
-    let arr = quote.split("").map(value => {
+    let arr = respnse.split("").map(value => {
         return "<span class = 'quote-chars'>"+ value + "</span>"
     })
+
+    // console.log(arr)
     quoteSection.innerHTML += arr.join("")
 
 }
@@ -26,7 +29,7 @@ const renderNewQuote = async() => {
 window.onload = ()=> {
     userInput.value
     document.getElementById("start-test").style.display = "block"
-    document.getElementById("stop=test").style.display = "none"
+    document.getElementById("stop-test").style.display = "none"
     userInput.disabled = true;
     renderNewQuote()
 }
