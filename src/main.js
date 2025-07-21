@@ -50,6 +50,14 @@ userInput.addEventListener("input", ()=> {
         if(char.innerText === userInputChars[index]){
             char.classList.add("success")
         }  
+        else if(userInputChars[index] === null){
+            if(char.classList.contains("success")){
+                char.classList.remove("success")
+            }
+            else {
+                char.classList.remove("fail")
+            }
+        }
     })
 
 })
