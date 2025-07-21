@@ -12,7 +12,7 @@ let mistakes = 0;
 const renderNewQuote = async() => {
     // const respnse  = await fetch (quoteApiUrl);
 
-    const respnse = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, nam. Voluptatibus vero fuga illum culpa ex voluptatem, quas incidunt quod vel laudantium iure minus soluta voluptas tempore dolorum ipsa officiis."
+    const respnse = "Lorem ipsum dolor sit amet consectetur"
     // let data = await respnse.json()
 
     // quote =  data.content
@@ -42,6 +42,11 @@ const startTest = () => {
     document.getElementById("stop-test").style.display = 'block'   
 }
 
+const displayResult = () => {
+    document.querySelector(".result").style.display  = "block"
+}
+
+
 userInput.addEventListener("input", ()=> {
     let quoteChars = document.querySelectorAll(".quote-chars")
     quoteChars = Array.from(quoteChars)
@@ -50,7 +55,7 @@ userInput.addEventListener("input", ()=> {
         if(char.innerText === userInputChars[index]){
             char.classList.add("success")
         }  
-        else if(userInputChars[index] === null){
+        else if(userInputChars[index] == null){
             if(char.classList.contains("success")){
                 char.classList.remove("success")
             }
@@ -65,6 +70,14 @@ userInput.addEventListener("input", ()=> {
             }
             document.getElementById("mistakes").innerText =  mistakes
         }
+
+        let check = quoteChars.every((element) => {
+            return element.classList.contains("success")
+        })
+        if(check){
+            displayResult()
+        }
+        
     })
 
 })
