@@ -1,4 +1,4 @@
-const quoteApiUrl = "https:/api.quotable.io/random?minLength=80&maxLenght=100"
+const quoteApiUrl = "https://api.quotable.io/quotes/random?minLength=100&maxLength=140"
 const quoteSection = document.getElementById("qoute")
 const userInput = document.getElementById("quote-input")
 
@@ -16,7 +16,10 @@ const renderNewQuote = async() => {
 
     quote =  data.content
     
-    console.log(data)
+    let arr = quote.split("").map(value => {
+        return "<span class = 'quote-chars'>"+ value + "</span>"
+    })
+    quoteSection.innerHTML += arr.join("")
 
 }
 
