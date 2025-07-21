@@ -34,10 +34,16 @@ window.onload = ()=> {
     renderNewQuote()
 }
 
+const timeReduce = ()=> {
+    time = 60;
+    timer = setInterval(updateTimer , 1000);
+}
+
 const startTest = () => {
     mistakes = 0;
     timer = ""
     userInput.disabled = false;
+    timeReduce();
     document.getElementById("start-test").style.display = "none"
     document.getElementById("stop-test").style.display = 'block'   
 }
@@ -45,6 +51,7 @@ const startTest = () => {
 const displayResult = () => {
     document.querySelector(".result").style.display  = "block"
 }
+
 
 
 userInput.addEventListener("input", ()=> {
