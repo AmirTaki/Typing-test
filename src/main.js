@@ -9,6 +9,17 @@ let timer = "";
 let mistakes = 0;
 
 
+const renderNewQuote = async() => {
+    const respnse  = await fetch (quoteApiUrl);
+
+    let data = await respnse.json()
+
+    quote =  data.content
+    
+    console.log(data)
+
+}
+
 window.onload = ()=> {
     userInput.value
     document.getElementById("start-test").style.display = "block"
