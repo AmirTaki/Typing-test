@@ -60,6 +60,14 @@ const startTest = () => {
 
 const displayResult = () => {
     document.querySelector(".result").style.display  = "block"
+    clearInterval(timer)
+    document.getElementById("stop-test").style.display = "none"
+    userInput.disabled = true;
+    let timerTake = 1;
+    if (time != 0){
+        timerTake = (60 - time) / 100
+    }
+    document.getElementById("wpm").innerText = (userInput.value.length / 5 /timerTake).toFixed(2) + "wpm"
 }
 
 
