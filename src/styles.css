@@ -44,3 +44,15 @@ textarea{
     font-size : 16px
 }
 
+
+
+button {
+    float: right;
+    margin-top:20px;
+    background-color: #0066f6;
+    color:#fff;
+    border :none;
+    padding: 10px 30px;
+    border-radius : 5px ;
+    font-size : 18px;
+}
