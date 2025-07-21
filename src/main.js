@@ -34,6 +34,16 @@ window.onload = ()=> {
     renderNewQuote()
 }
 
+
+const updateTimer = () => {
+    if(time === 0){
+        displayResult()
+    }
+    else {
+        document.getElementById('timer').innerText = --time + "s";
+    }
+}
+
 const timeReduce = ()=> {
     time = 60;
     timer = setInterval(updateTimer , 1000);
