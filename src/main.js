@@ -58,6 +58,13 @@ userInput.addEventListener("input", ()=> {
                 char.classList.remove("fail")
             }
         }
+        else {
+            if(!char.classList.contains("fail")){
+                mistakes += 1;
+                char.classList.add("fail")
+            }
+            document.getElementById("mistakes").innerText =  mistakes
+        }
     })
 
 })
