@@ -3,4 +3,14 @@ const quoteSection = document.getElementById("qoute")
 const userInput = document.getElementById("quote-input")
 
 
-console.log( quoteSection, userInput)
+let quote = ""
+let time = 60;
+let timer = "";
+let mistakes = 0;
+
+
+window.onload = ()=> {
+    userInput.value
+    document.getElementById("start-test").style.display = "block"
+    document.getElementById("stop=test").style.display = "none"
+}
