@@ -44,5 +44,10 @@ const startTest = () => {
 
 userInput.addEventListener("input", ()=> {
     let quoteChars = document.querySelectorAll(".quote-chars")
+    quoteChars = Array.from(quoteChars)
+    let userInputChars = userInput.value.split("")
+    quoteChars.forEach((char, index)=> {
+        
+    })
 
 })
