@@ -27,9 +27,17 @@ const renderNewQuote = async() => {
 }
 
 window.onload = ()=> {
-    userInput.value
+    userInput.value = ""
     document.getElementById("start-test").style.display = "block"
     document.getElementById("stop-test").style.display = "none"
     userInput.disabled = true;
     renderNewQuote()
+}
+
+const startTest = () => {
+    mistakes = 0;
+    timer = ""
+    userInput.disabled = false;
+    document.getElementById("start-test").style.display = "none"
+    document.getElementById("stop-test").style.display = 'block'   
 }
