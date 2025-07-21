@@ -47,7 +47,9 @@ userInput.addEventListener("input", ()=> {
     quoteChars = Array.from(quoteChars)
     let userInputChars = userInput.value.split("")
     quoteChars.forEach((char, index)=> {
-        
+        if(char.innerText === userInputChars[index]){
+            char.classList.add("success")
+        }  
     })
 
 })
